@@ -1,0 +1,19 @@
+public class RightAngleTriangleSquarePattern {
+    public static void main(String[] args) {
+        int rows = 4; // Number of rows for the pattern
+
+        // Initialize the number to start squaring
+        int number = 1;
+
+        // Loop through each row
+        for (int i = 1; i <= rows; i++) {
+            // Print squares of consecutive numbers
+            for (int j = 1; j <= i; j++) {
+                System.out.print((number * number) + " ");
+                number++;
+            }
+            // Move to the next line
+            System.out.println();
+        }
+    }
+}
