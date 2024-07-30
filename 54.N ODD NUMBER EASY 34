@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class FindNthOddNumberAfterNOddNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the value of N
+        System.out.print("Enter N: ");
+        int n = scanner.nextInt();
+
+        // Read the position of the odd number after N odd numbers
+        System.out.print("Enter the position of the odd number after N odd numbers: ");
+        int k = scanner.nextInt();
+
+        // Calculate the nth odd number after n odd numbers
+        int result = (n + k) * 2 - 1;
+
+        // Print the result
+        System.out.println(n + "th Odd number after " + n + " odd numbers = " + result);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
