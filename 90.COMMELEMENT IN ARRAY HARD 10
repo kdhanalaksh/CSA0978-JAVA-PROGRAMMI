@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class CommonElementsInArraysSimple {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Read first array
+        System.out.println("Enter elements of the first array separated by space:");
+        String[] input1 = scan.nextLine().split(" ");
+        int[] array1 = new int[input1.length];
+        for (int i = 0; i < input1.length; i++) {
+            array1[i] = Integer.parseInt(input1[i]);
+        }
+
+        // Read second array
+        System.out.println("Enter elements of the second array separated by space:");
+        String[] input2 = scan.nextLine().split(" ");
+        int[] array2 = new int[input2.length];
+        for (int i = 0; i < input2.length; i++) {
+            array2[i] = Integer.parseInt(input2[i]);
+        }
+
+        // Find common elements
+        ArrayList<Integer> commonElements = new ArrayList<>();
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j] && !commonElements.contains(array1[i])) {
+                    commonElements.add(array1[i]);
+                }
+            }
+        }
+
+        // Print common elements
+        System.out.println("Common elements: " + commonElements);
+
+        // Close the scanner
+        scan.close();
+    }
+}
