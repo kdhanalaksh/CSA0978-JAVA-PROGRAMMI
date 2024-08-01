@@ -1,0 +1,22 @@
+public class StepsToReduceToZero {
+    public static void main(String[] args) {
+        int num = 14; // Example input
+        
+        int steps = 0; // To count the number of steps
+        
+        // Continue until num becomes zero
+        while (num > 0) {
+            if (num % 2 == 0) {
+                // If the number is even
+                num /= 2;
+            } else {
+                // If the number is odd
+                num -= 1;
+            }
+            steps++; // Increment the step count
+        }
+        
+        // Print the total number of steps
+        System.out.println("Number of steps to reduce to zero: " + steps);
+    }
+}
