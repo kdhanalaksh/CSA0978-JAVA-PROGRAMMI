@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class StudentGrades {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Declare variables to hold marks for each subject
+        int python, cProgramming, mathematics, physics, chemistry, professionalEthics;
+        
+        // Input marks for each subject
+        System.out.print("Enter the marks in Python: ");
+        python = scan.nextInt();
+        
+        System.out.print("Enter the marks in C Programming: ");
+        cProgramming = scan.nextInt();
+        
+        System.out.print("Enter the marks in Mathematics: ");
+        mathematics = scan.nextInt();
+        
+        System.out.print("Enter the marks in Physics: ");
+        physics = scan.nextInt();
+        
+        System.out.print("Enter the marks in Chemistry: ");
+        chemistry = scan.nextInt();
+        
+        System.out.print("Enter the marks in Professional Ethics: ");
+        professionalEthics = scan.nextInt();
+        
+        // Calculate total marks
+        int totalMarks = python + cProgramming + mathematics + physics + chemistry + professionalEthics;
+        
+        // Calculate aggregate percentage
+        double aggregatePercentage = (totalMarks / 600.0) * 100; // 600 is the maximum marks (100 per subject * 6 subjects)
+        
+        // Determine the grade
+        String grade;
+        if (aggregatePercentage > 75) {
+            grade = "Distinction";
+        } else if (aggregatePercentage >= 60) {
+            grade = "First Division";
+        } else if (aggregatePercentage >= 50) {
+            grade = "Second Division";
+        } else if (aggregatePercentage >= 40) {
+            grade = "Third Division";
+        } else {
+            grade = "FAIL";
+        }
+        
+        // Print the results
+        System.out.println("Total = " + totalMarks);
+        System.out.println("Aggregate Percentage = " + aggregatePercentage);
+        System.out.println("Grade = " + grade);
+        
+        // Close the scanner
+        scan.close();
+    }
+}
