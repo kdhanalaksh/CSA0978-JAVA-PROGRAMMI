@@ -1,0 +1,37 @@
+public class BinaryConversions {
+    public static void main(String[] args) {
+        String binaryString = "1101101"; // Example binary number
+
+        // Convert binary to decimal manually
+        int decimalValue = 0;
+        int base = 1; // 2^0
+
+        // Traverse the binary string from the end
+        for (int i = binaryString.length() - 1; i >= 0; i--) {
+            char bit = binaryString.charAt(i);
+            if (bit == '1') {
+                decimalValue += base;
+            }
+            base *= 2; // Move to the next higher power of 2
+        }
+
+        // Convert decimal to octal manually
+        String octalString = "";
+        int tempDecimalValue = decimalValue; // Use a temporary variable for conversion
+
+        if (tempDecimalValue == 0) {
+            octalString = "0";
+        } else {
+            while (tempDecimalValue > 0) {
+                int remainder = tempDecimalValue % 8;
+                octalString = remainder + octalString;
+                tempDecimalValue /= 8;
+            }
+        }
+
+        // Print results
+        System.out.println("Binary: " + binaryString);
+        System.out.println("Decimal: " + decimalValue);
+        System.out.println("Octal: " + octalString);
+    }
+}
