@@ -1,0 +1,36 @@
+public class OctalConversions {
+    public static void main(String[] args) {
+        String octalString = "155"; // Example octal number
+
+        // Convert octal to decimal manually
+        int decimalValue = 0;
+        int base = 1; // 8^0
+
+        // Traverse the octal string from the end
+        for (int i = octalString.length() - 1; i >= 0; i--) {
+            char digitChar = octalString.charAt(i);
+            int digit = digitChar - '0'; // Convert char to int
+            decimalValue += digit * base;
+            base *= 8; // Move to the next higher power of 8
+        }
+
+        // Convert decimal to binary manually
+        StringBuilder binaryString = new StringBuilder();
+        int tempDecimalValue = decimalValue;
+
+        if (tempDecimalValue == 0) {
+            binaryString.append("0");
+        } else {
+            while (tempDecimalValue > 0) {
+                int remainder = tempDecimalValue % 2;
+                binaryString.insert(0, remainder);
+                tempDecimalValue /= 2;
+            }
+        }
+
+        // Print results
+        System.out.println("Octal: " + octalString);
+        System.out.println("Decimal: " + decimalValue);
+        System.out.println("Binary: " + binaryString.toString());
+    }
+}
